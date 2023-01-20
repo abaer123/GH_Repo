@@ -36,11 +36,11 @@ else:
     note.logger.error("Error! cannot create the database connection.")
 
 # SAST Vulnerability
-compute_user_input = input('\nType something here to compute: ')
-if not compute_user_input:
-	print ("No input")
-else:
-	print ("Result: ", eval(compute_user_input))
+# compute_user_input = input('\nType something here to compute: ')
+# if not compute_user_input:
+# 	print ("No input")
+# else:
+# 	print ("Result: ", eval(compute_user_input))
 
 # Another Vulnerability
 
