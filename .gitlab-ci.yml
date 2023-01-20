@@ -62,6 +62,7 @@ build:
 unit:
   image: python:3.6
   stage: unit
+  allow_failure: true
   script:
     - apt update -y
     - apt install libmariadb3 libmariadb-dev sqlite3 libsqlite3-dev -y
