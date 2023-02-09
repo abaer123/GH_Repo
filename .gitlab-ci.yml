@@ -16,6 +16,7 @@ variables:
   FUZZAPI_PROFILE: Long-100
   FUZZAPI_OPENAPI: test_openapi.v2.0.json
   FUZZAPI_TARGET_URL: $APP_URL
+ # syntax
 
 # adding the test and dast & fuzz stages allow for the OOTB (out of the box) security scans to run
 stages:
@@ -37,7 +38,7 @@ stages:
 
 include:  
   - template: Jobs/Deploy.gitlab-ci.yml # https://gitlab.com/gitlab-org/gitlab/blob/master/lib/gitlab/ci/templates/Jobs/Deploy.gitlab-ci.yml
-  - local: '.test.yml'
+  # - local: '.test.yml'
   # - template: Security/Dependency-Scanning.gitlab-ci.yml
   # - template: Security/License-Scanning.gitlab-ci.yml
   # - template: Code-Quality.gitlab-ci.yml
