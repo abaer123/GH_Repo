@@ -1,0 +1,22 @@
+image: docker:latest
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
+  ROLLOUT_RESOURCE_TYPE: deployment
+
+stages:
+  - unit
+
+unit:
+  image: python:3.6
+  stage: unit
+  script:
+    - apt update -y
+    - apt install libmariadb3 libmariadb-dev sqlite3 libsqlite3-dev -y
+    - pip install --upgrade pip
+    - pip3 install -r requirements.txt
+    - python -m unittest tests/test_db.py
