@@ -1,3 +1,4 @@
+#.gitlab-ci.yml file with stages, templates, and yaml
 
 image: docker:latest
 
