@@ -1,0 +1,110 @@
+# GraphiQL mutations to add filters to streaming audit events
+# Welcome to GraphiQL
+#
+# GraphiQL is an in-browser tool for writing, validating, and
+# testing GraphQL queries.
+#
+# Type queries into this side of the screen, and you will see intelligent
+# typeaheads aware of the current GraphQL type schema and live syntax and
+# validation errors highlighted within the text.
+#
+# GraphQL queries typically start with a "{" character. Lines that start
+# with a # are ignored.
+#
+# An example GraphQL query might look like:
+#
+#     {
+#       field(arg: "value") {
+#         subField
+#       }
+#     }
+#
+# Keyboard shortcuts:
+#
+#  Prettify Query:  Shift-Ctrl-P (or press the prettify button above)
+#
+#     Merge Query:  Shift-Ctrl-M (or press the merge button above)
+#
+#       Run Query:  Ctrl-Enter (or press the play button above)
+#
+#   Auto Complete:  Ctrl-Space (or just start typing)
+#
+
+# GraphiQL URL https://gitlab.com/-/graphql-explorer?_gl=1*ei3tfj*_ga*NzY4NTM0MjExLjE2Nzk2MjM0ODg.*_ga_ENFH3X7M5Y*MTY3OTc4Mjg0Ni45LjEuMTY3OTc4MzU2My4wLjAuMA..
+
+query seeAuditEventDestinations{
+  group(fullPath: "anthonybaer"){
+    id
+    externalAuditEventDestinations {
+      nodes {
+        destinationUrl
+        verificationToken
+        id
+        eventTypeFilters
+      }
+    }
+  }
+}
+
+mutation createEventTypeFilter {
+  auditEventsStreamingDestinationEventsAdd(input: {
+    destinationId: "gid://gitlab/AuditEvents::ExternalAuditEventDestination/640"
+    eventTypeFilters: ["repository_git_operation"]
+    
+  }){
+    errors
+    eventTypeFilters
+  }
+}
+
+mutation createEventTypeFilter2 {
+  auditEventsStreamingDestinationEventsAdd(input: {
+    destinationId: "gid://gitlab/AuditEvents::ExternalAuditEventDestination/640"
+    eventTypeFilters: ["approval_rule_created"]
+    
+  }){
+    errors
+    eventTypeFilters
+  }
+}
+
+mutation createEventTypeFilter3 {
+  auditEventsStreamingDestinationEventsAdd(input: {
+    destinationId: "gid://gitlab/AuditEvents::ExternalAuditEventDestination/640"
+    eventTypeFilters: ["update_approval_rules"]
+    
+  }){
+    errors
+    eventTypeFilters
+  }
+}
+
+mutation removeEventTypeFilter {
+  auditEventsStreamingDestinationEventsRemove(input: {
+    destinationId: "gid://gitlab/AuditEvents::ExternalAuditEventDestination/640"
+    eventTypeFilters: ["repository_git_operation"]
+    
+  }){
+    errors
+  }
+}
+
+mutation removeEventTypeFilter2 {
+  auditEventsStreamingDestinationEventsRemove(input: {
+    destinationId: "gid://gitlab/AuditEvents::ExternalAuditEventDestination/640"
+    eventTypeFilters: ["approval_rule_created"]
+    
+  }){
+    errors
+  }
+}
+
+mutation removeEventTypeFilter3 {
+  auditEventsStreamingDestinationEventsRemove(input: {
+    destinationId: "gid://gitlab/AuditEvents::ExternalAuditEventDestination/640"
+    eventTypeFilters: ["update_approval_rules"]
+    
+  }){
+    errors
+  }
+}
