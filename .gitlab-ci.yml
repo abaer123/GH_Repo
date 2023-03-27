@@ -52,9 +52,12 @@ security_compliance_job:
   stage: .pre 
   rules:
     - when: always
-  script: echo "Hello from me."
   before_script:
-    - echo "Hello from me!"
+    - echo "Hello from the before_script me!"
+  script: echo "Hello from me."
+  after_script:
+    - echo "Hello from the after_script me!"
+  
 
 
 build:
