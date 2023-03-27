@@ -1,6 +1,8 @@
 import os
 from notes import note
 
+aws_key_id = "AKIAIOSF0DNN7EXAMPLE" 
+
 if __name__ == "__main__":
 
     aws_key_id = "AKIAIOSFODNN7EXAMPLE"
