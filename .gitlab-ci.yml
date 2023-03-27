@@ -51,13 +51,10 @@ include:
 security_compliance_job:
   stage: .pre 
   rules:
-  before_script:
-    - echo "Hello from the before_script me!"
+    - when: always
   script: echo "Hello from me."
-  after_script:
-    - echo "Hello from the after_script me!"
+ 
   
-
 
 build:
   stage: build
