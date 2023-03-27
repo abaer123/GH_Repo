@@ -18,7 +18,7 @@ variables:
   FUZZAPI_TARGET_URL: $APP_URL
 
 # adding the test and dast & fuzz stages allow for the OOTB (out of the box) security scans to run
-# comment
+
 stages:
   - .pre
   - build
