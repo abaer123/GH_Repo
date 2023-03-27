@@ -40,6 +40,7 @@ include:
   - template: Code-Quality.gitlab-ci.yml
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
+  - template: Security/DAST.latest.gitlab-ci.yml
   - template: Jobs/Deploy.gitlab-ci.yml 
   # - template: Security/Dependency-Scanning.gitlab-ci.yml
   # - template: Coverage-Fuzzing.gitlab-ci.yml
