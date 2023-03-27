@@ -40,14 +40,14 @@ include:
   - template: Code-Quality.gitlab-ci.yml
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
-  - template: Security/DAST.latest.gitlab-ci.yml
   - template: Jobs/Deploy.gitlab-ci.yml 
   # - template: Security/Dependency-Scanning.gitlab-ci.yml
   # - template: Coverage-Fuzzing.gitlab-ci.yml
   # - template: API-Fuzzing.gitlab-ci.yml
+  # - template: Security/DAST.latest.gitlab-ci.yml
 
 
-Attempt to override compliance pipeline job from Compliance Framework
+# Attempt to override compliance pipeline job from Compliance Framework
 security_compliance_job:
   stage: .pre 
   rules:
