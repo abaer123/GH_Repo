@@ -19,6 +19,7 @@ variables:
 
 # adding the test and dast & fuzz stages allow for the OOTB (out of the box) security scans to run
 stages:
+  - .pre
   - build
   - unit
   - test
@@ -43,6 +44,15 @@ include:
   # - template: Security/Dependency-Scanning.gitlab-ci.yml
   # - template: Coverage-Fuzzing.gitlab-ci.yml
   # - template: API-Fuzzing.gitlab-ci.yml
+
+
+# Attempt to override Compliance job from Compliance Framework
+# security_compliance_job:
+#   stage: .pre 
+#   rules:
+#     - when: always
+#   script: echo "Hello from me."
+
 
 build:
   stage: build
