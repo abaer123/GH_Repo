@@ -51,7 +51,6 @@ include:
 security_compliance_job:
   stage: .pre 
   rules:
-    - when: always
   before_script:
     - echo "Hello from the before_script me!"
   script: echo "Hello from me."
