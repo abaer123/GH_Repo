@@ -48,11 +48,11 @@ include:
 
 
 # Attempt to override compliance pipeline job from Compliance Framework
-security_compliance_job:
-  stage: .pre 
-  rules:
-    - when: always
-  script: echo "Hello from me."
+# security_compliance_job:
+#   stage: .pre 
+#   rules:
+#     - when: always
+#   script: echo "Hello from me."
  
   
 
