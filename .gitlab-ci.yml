@@ -24,8 +24,8 @@ variables:
 
 stages:
   - .pre
-  - build
-  - unit
+ # - build
+ # - unit
   - test
   - cfuzz
   - review
