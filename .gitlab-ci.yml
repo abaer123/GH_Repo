@@ -19,6 +19,7 @@ variables:
 
 # adding the test and dast & fuzz stages allow for the OOTB (out of the box) security scans to run
 # edit for streaming audit event
+# new change
 
 
 stages:
