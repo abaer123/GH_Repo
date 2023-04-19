@@ -44,7 +44,7 @@ include:
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
   - template: Security/Container-Scanning.gitlab-ci.yml
-  #- template: Security/DAST.latest.gitlab-ci.yml # ultimate
+  - template: Security/DAST.latest.gitlab-ci.yml # ultimate
   # - template: Jobs/Deploy.gitlab-ci.yml 
   # - template: Security/Dependency-Scanning.gitlab-ci.yml # ultimate
   # - template: Coverage-Fuzzing.gitlab-ci.yml # ultimate
