@@ -22,8 +22,6 @@ variables:
 # create change
 
 
-
-
 stages:
   - .pre
   - build
@@ -46,12 +44,12 @@ include:
   - template: Code-Quality.gitlab-ci.yml
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
-  - template: Security/DAST.latest.gitlab-ci.yml
-  - template: Jobs/Deploy.gitlab-ci.yml 
-  # - template: Security/Dependency-Scanning.gitlab-ci.yml
-  # - template: Security/Container-Scanning.gitlab-ci.yml
-  # - template: Coverage-Fuzzing.gitlab-ci.yml
-  # - template: API-Fuzzing.gitlab-ci.yml
+  - template: Security/Container-Scanning.gitlab-ci.yml
+  #- template: Security/DAST.latest.gitlab-ci.yml # ultimate
+  # - template: Jobs/Deploy.gitlab-ci.yml 
+  # - template: Security/Dependency-Scanning.gitlab-ci.yml # ultimate
+  # - template: Coverage-Fuzzing.gitlab-ci.yml # ultimate
+  # - template: API-Fuzzing.gitlab-ci.yml # ultimate
 
 
 # Attempt to override Compliance job from Compliance Framework
@@ -62,25 +60,25 @@ include:
 #   script: echo "Hello from me."
 
 
-build:
-  stage: build
-  variables:
-    IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHA
-  script:
-    - docker info
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker build -t $IMAGE .
-    - docker push $IMAGE
+# build:
+#   stage: build
+#   variables:
+#     IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHA
+#   script:
+#     - docker info
+#     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+#     - docker build -t $IMAGE .
+#     - docker push $IMAGE
 
-unit:
-  image: python:3.6
-  stage: unit
-  script:
-    - apt update -y
-    - apt install libmariadb3 libmariadb-dev sqlite3 libsqlite3-dev -y
-    - pip install --upgrade pip
-    - pip3 install -r requirements.txt
-    - python -m unittest tests/test_db.py
+# unit:
+#   image: python:3.6
+#   stage: unit
+#   script:
+#     - apt update -y
+#     - apt install libmariadb3 libmariadb-dev sqlite3 libsqlite3-dev -y
+#     - pip install --upgrade pip
+#     - pip3 install -r requirements.txt
+#     - python -m unittest tests/test_db.py
 
 # ensuring that our image is updated before running dependency scanning
 # gemnasium-python-dependency_scanning:
