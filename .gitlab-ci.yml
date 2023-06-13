@@ -48,8 +48,8 @@ include:
   - template: Security/Secret-Detection.gitlab-ci.yml
   - template: Security/Container-Scanning.gitlab-ci.yml
   - template: Security/DAST.latest.gitlab-ci.yml # ultimate
-  # - template: Jobs/Deploy.gitlab-ci.yml 
-  # - template: Security/Dependency-Scanning.gitlab-ci.yml # ultimate
+  - template: Jobs/Deploy.gitlab-ci.yml 
+  - template: Security/Dependency-Scanning.gitlab-ci.yml # ultimate
   # - template: Coverage-Fuzzing.gitlab-ci.yml # ultimate
   # - template: API-Fuzzing.gitlab-ci.yml # ultimate
 
@@ -83,10 +83,10 @@ unit:
     - python -m unittest tests/test_db.py
 
 # ensuring that our image is updated before running dependency scanning
-# gemnasium-python-dependency_scanning:
-#   before_script:
-#     - apt update
-#     - apt install libmariadb3 libmariadb-dev sqlite3 libsqlite3-dev -y
+gemnasium-python-dependency_scanning:
+  before_script:
+    - apt update
+    - apt install libmariadb3 libmariadb-dev sqlite3 libsqlite3-dev -y
 
 # adding fuzz job
 # my_fuzz_target:
