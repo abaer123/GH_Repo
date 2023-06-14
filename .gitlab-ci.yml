@@ -16,7 +16,7 @@ variables:
   FUZZAPI_PROFILE: Long-100
   FUZZAPI_OPENAPI: test_openapi.v2.0.json
   FUZZAPI_TARGET_URL: $APP_URL
-  # SAST_DEFAULT_ANALYZERS: "flawfinder, spotbugs, nodejs-scan, eslint, bandit, brakeman, gosec, spotbugs"
+  SAST_DEFAULT_ANALYZERS: "bandit"
   # SAST_EXCLUDED_PATHS: "spec, test, tests, tmp"
 
 # adding the test and dast & fuzz stages allow for the OOTB (out of the box) security scans to run
