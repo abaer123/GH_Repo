@@ -49,7 +49,7 @@ include:
   - template: Security/DAST.latest.gitlab-ci.yml
   - template: Jobs/Deploy.gitlab-ci.yml 
   # - template: Security/Dependency-Scanning.gitlab-ci.yml
-  # - template: Security/Container-Scanning.gitlab-ci.yml
+  - template: Security/Container-Scanning.gitlab-ci.yml
   # - template: Coverage-Fuzzing.gitlab-ci.yml
   # - template: API-Fuzzing.gitlab-ci.yml
 
@@ -61,6 +61,9 @@ include:
 #     - when: always
 #   script: echo "Hello from me."
 
+container_scanning:
+  variables:
+    GIT_STRATEGY: fetch
 
 build:
   stage: build
