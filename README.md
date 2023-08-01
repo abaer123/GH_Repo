@@ -1,1 +1,1 @@
-# DevSecOps Workshop 2022 Q2
+# DevSecOps Workshop 2023 Q2
