@@ -88,7 +88,7 @@ def select_note_by_id(conn, id=None):
 
     try:
         note.logger.info("Getting all notes!")
-        cur.execute(query)
+        cur.execute(query, params)
     except Exception as e:
         note.logger.error("Error: cannot select note by id - %s" % e)
 
