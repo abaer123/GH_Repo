@@ -78,6 +78,7 @@ unit:
     - apt install libmariadb3 libmariadb-dev sqlite3 libsqlite3-dev -y
     - python -V
     - pip install --upgrade pip
+    - pip install contextvars
     - pip3 install -r requirements.txt
     - python -m unittest tests/test_db.py
 
