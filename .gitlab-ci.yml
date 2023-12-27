@@ -76,6 +76,7 @@ unit:
   script:
     - apt update -y
     - apt install libmariadb3 libmariadb-dev sqlite3 libsqlite3-dev -y
+    - pip install contextvars
     - python -V
     - pip install --upgrade pip
     - pip3 install -r requirements.txt
