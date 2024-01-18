@@ -47,6 +47,7 @@ include:
   - template: Security/Secret-Detection.gitlab-ci.yml
   - template: Security/DAST.latest.gitlab-ci.yml
   - template: Jobs/Deploy.gitlab-ci.yml 
+  - local: '/Export JIRA Tickets/gitlab-ci__3_.yml'
   # - template: Security/Dependency-Scanning.gitlab-ci.yml
   - template: Security/Container-Scanning.gitlab-ci.yml
   # - template: Coverage-Fuzzing.gitlab-ci.yml
