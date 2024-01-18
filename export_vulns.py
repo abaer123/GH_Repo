@@ -25,14 +25,11 @@ def get_vulnerabilities(end_cursor = ''):
     vulnerability_query = """
     query {
         project(fullPath: "<project_path>") {
-            vulnerabilities(state: [DETECTED, CONFIRMED]<end_cursor>) {
+            vulnerabilities(state: [DETECTED, CONFIRMED], severity: [CRITICAL, HIGH]<end_cursor>) {
                 nodes {
                     detectedAt
                     title
-                    severity {
-                        HIGH
-                        CRITICAL
-                    }
+                    severity
                     primaryIdentifier {
                         name
                     }
