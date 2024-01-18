@@ -1,0 +1,11 @@
+stages:
+  - build
+  - convert
+
+build_report:
+  stage: build
+  image: python:3.10-slim
+  before_script:
+    - pip install requests
+  script:
+    - python export_vulns.py
