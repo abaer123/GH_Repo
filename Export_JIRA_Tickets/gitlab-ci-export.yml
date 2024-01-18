@@ -8,4 +8,4 @@ build_report:
   before_script:
     - pip install requests
   script:
-    - python export_vulns.py
+    - python '/Export_JIRA_Tickets/export_vulns.py'
