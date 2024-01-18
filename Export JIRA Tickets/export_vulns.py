@@ -4,6 +4,10 @@ import os
 import json
 import base64
 
+
+# GraphQL Severity level filtering
+# Severity of the vulnerability (INFO, UNKNOWN, LOW, MEDIUM, HIGH, CRITICAL).
+
 def get_vulnerabilities(end_cursor = ''):
 
     # Get The API Token From The Project CI / CD Variables
@@ -25,7 +29,10 @@ def get_vulnerabilities(end_cursor = ''):
                 nodes {
                     detectedAt
                     title
-                    severity
+                    severity {
+                        HIGH
+                        CRITICAL
+                    }
                     primaryIdentifier {
                         name
                     }
