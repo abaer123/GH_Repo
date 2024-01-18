@@ -7,6 +7,8 @@ import base64
 
 # GraphQL Severity level filtering
 # Severity of the vulnerability (INFO, UNKNOWN, LOW, MEDIUM, HIGH, CRITICAL).
+# Export JIRA Tickets/export_vulns.py
+# ~/Export JIRA Tickets/export_vulns.py
 
 def get_vulnerabilities(end_cursor = ''):
 
